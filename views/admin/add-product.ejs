@@ -47,6 +47,9 @@
           rows="10"
         ><% if (editing) { %><%= product.description %><% } %></textarea>
       </div>
+      <% if(editing) { %>
+      <input type="hidden" value="<%= product._id %>" name="productId">
+      <% } %>
       <button type="submit" class="btn btn-primary"><% if (editing) { %> ویرایش محصول <% }else{ %> افزودن محصول <% } %></button>
     </form>
   </div>
