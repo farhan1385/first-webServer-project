@@ -25,3 +25,16 @@ exports.getProduct = (req, res) => {
         console.log(err)
     ));
 }
+
+
+exports.getProducts = (req, res) => {
+    Product.find().then(products => {
+        res.render("shop/index", {
+            path: "/products",
+            pageTitle: "products",
+            prods: products
+        })
+    }).catch(err => (
+        console.log(err)
+    ));
+};
